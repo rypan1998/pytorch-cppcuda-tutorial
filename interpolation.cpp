@@ -24,7 +24,7 @@ torch::Tensor trilinear_interpolation_bw(
     return trilinear_bw_cu(dL_dfeat_interp, feats, points);
 }
 
-
+// python 调用 C++ 程序
 PYBIND11_MODULE(TORCH_EXTENSION_NAME, m){
     m.def("trilinear_interpolation_fw", &trilinear_interpolation_fw);
     m.def("trilinear_interpolation_bw", &trilinear_interpolation_bw);
